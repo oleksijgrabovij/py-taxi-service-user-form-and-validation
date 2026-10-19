@@ -3,10 +3,11 @@
 
 {% block content %}
   <h1>Create Driver</h1>
+
   <form method="post">
     {% csrf_token %}
     {{ form|crispy }}
-
     <input type="submit" value="Save" class="btn btn-primary">
+    <a href="{% url 'taxi:driver-list' %}" class="btn btn-secondary">Cancel</a>
   </form>
 {% endblock %}
