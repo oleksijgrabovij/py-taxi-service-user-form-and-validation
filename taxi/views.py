@@ -4,9 +4,15 @@ from django.urls import reverse_lazy
 from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import CreateView, DeleteView
-from .forms import DriverLicenseUpdateForm, DriverCreationForm, CarForm
+from django.http import HttpResponseRedirect
 
-from .models import Driver, Car, Manufacturer
+from taxi.forms import (
+    CarForm,
+    DriverCreationForm,
+    DriverLicenseUpdateForm,
+)
+
+from taxi.models import Driver, Car, Manufacturer
 
 
 @login_required
